@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Events_App</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_login">Login</string>
+
+    <string name="event_title">Event Title</string>
+    <string name="add_new_event">Add new event</string>
+    <string name="my_events">My events</string>
+    <string name="info">info</string>
+    <string name="hey">Hey</string>
+    <string name="name">NAME</string>
+    <string name="hey_may">Hey May!</string>
+    <string name="log_out">Log Out</string>
+    <string name="Logout">Log out</string>
+    <string name="log_in">Login</string>
+    <string name="hello">Hello</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_key">ENTER KEY</string>
+    <string name="cake">Cake</string>
+    <string name="by_yarden">by Yarden</string>
+    <string name="add_new_event_item">add new event item</string>
+</resources>

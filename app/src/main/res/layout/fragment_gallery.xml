@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.gallery.GalleryFragment"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/pastel_blue"
+    android:orientation="vertical"
+    android:id="@+id/main_FRAME_new_list">
+
+        <LinearLayout
+            android:id="@+id/newEvent_ET_layoutKey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newEvent_ET_key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:hint="@string/enter_key"
+                android:textSize="24sp"
+                android:textAlignment="center"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/newEvent_ET_join"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Join"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/newEvent_ET_or"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newEvent_ET_layoutKey"
+            android:layout_centerHorizontal="true"
+            android:text="or"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:outlineSpotShadowColor="@color/pink"
+            android:shadowRadius="10"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:outlineAmbientShadowColor="@color/pink"
+            android:fallbackLineSpacing="true"
+            android:background="@color/pink"
+            android:backgroundTint="@color/blue_gray"
+            />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/newEvent_ET_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newEvent_ET_or"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="0dp"
+            android:gravity="center"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newEvent_ET_title"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#36454F"
+                android:hint="@string/event_title"
+                android:gravity="center"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/newEvent_TXT_addMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/newEvent_ET_layout"
+            android:gravity="center">
+            <RadioButton android:id="@+id/newEvent_radio_private"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private list"
+                android:onClick="onRadioButtonClicked"
+                android:checked="true"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"/>
+            <RadioButton android:id="@+id/newEvent_radio_public"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Public list"
+                android:onClick="onRadioButtonClicked"
+                style="@style/Widget.AppCompat.CompoundButton.RadioButton"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/newEvent_TXT_member_permissions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newEvent_TXT_addMembers"
+            android:text="Member permissions"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+
+        <LinearLayout
+            android:id="@+id/newEvent_BOX_member_permissions"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newEvent_TXT_member_permissions"
+            android:paddingStart="130dp"
+            android:paddingEnd="130dp">
+
+            <CheckBox android:id="@+id/checkbox_create_new_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create new task"
+                android:checked="true"/>
+            <CheckBox android:id="@+id/checkbox_mark_as_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mark as done"
+                android:checked="true"/>
+            <CheckBox android:id="@+id/checkbox_edit_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit task" />
+            <CheckBox android:id="@+id/checkbox_delete_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delete task" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/newEvent_CAL_dateAndTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newEvent_BOX_member_permissions"
+            android:orientation="vertical">
+            <DatePicker
+                android:id="@+id/date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="140dp"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"
+                android:spinnersShown="true"
+                android:overScrollMode="always"
+                android:headerBackground="@android:color/transparent"
+                android:layout_gravity="center" />
+            <TimePicker
+                android:id="@+id/time_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:timePickerMode="spinner"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/newEvent_TXT_key"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newEvent_CAL_dateAndTime"
+            android:textIsSelectable="true"
+            android:textAlignment="center"
+            android:text="Share Key: AAAAB3NzaC1yc2EAAAADAQABAAAAgQ"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:minLines="1" />
+
+        <Button
+            android:id="@+id/newEvent_BTN_set"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/newEvent_TXT_key"
+            android:layout_centerHorizontal="true"
+            android:text="Set"/>
+
+</RelativeLayout>
+</ScrollView>

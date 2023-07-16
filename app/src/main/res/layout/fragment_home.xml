@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/main_TXT_myEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        android:textAlignment="center"
+        android:text="@string/my_events"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/magenta"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/main_MCV_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_TXT_myEvents"
+        app:cardCornerRadius="20dp"
+        android:layout_margin="4dp"
+        android:elevation="8dp"
+        app:cardElevation="8dp"
+        android:backgroundTint="@color/pink">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/main_IMG_addNewEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="6dp"
+                android:contentDescription="@string/add_new_event"
+                app:srcCompat="@drawable/icon_plus"
+                />
+            <TextView
+                android:id="@+id/main_TXT_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="6dp"
+                android:layout_toEndOf="@id/main_IMG_addNewEvent"
+                android:text="@string/add_new_event"
+                android:textSize="24sp"
+                />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/main_LST_events"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/main_MCV_add"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        tools:listitem="@layout/event_item"/>
+
+</RelativeLayout>
